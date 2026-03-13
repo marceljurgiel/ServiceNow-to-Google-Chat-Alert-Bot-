@@ -2,9 +2,8 @@
 🚀 Serverless ServiceNow to Google Chat integration using Google Apps Script. Automatically parses Gmail incident alerts and pushes interactive V2 Cards to Chat spaces via Webhooks. Zero infrastructure, 100% cloud-based.
 # ServiceNow to Google Chat Alert Bot 🚀
 
-[![Google Apps Script]((https://developers.google.com/apps-script))
-
-[![ServiceNow]((https://www.servicenow.com/))
+[![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=for-the-badge&logo=google-apps-script&logoColor=white)](https://developers.google.com/apps-script)
+[![ServiceNow](https://img.shields.io/badge/ServiceNow-81B5A1?style=for-the-badge&logo=servicenow&logoColor=white)](https://www.servicenow.com/)
 
 A lightweight, serverless integration built with Google Apps Script that monitors a Gmail queue for new ServiceNow Incident notifications and instantly pushes an interactive Card alert to Google Chat.
 

@@ -16,6 +16,7 @@ IT Dispatchers and Support Teams often waste time manually refreshing ServiceNow
 This automation runs entirely in the cloud (Google Workspace). It parses incoming email notifications, extracts key incident data, and uses an Incoming Webhook to send a highly visible, interactive alert directly to the team's Google Chat space.
 
 
+
 ## 🛠️ Built With (Tools & Technologies)
 
 * **Google Apps Script (GAS):** A cloud-based JavaScript platform that allows you to integrate with and automate tasks across Google products. It provides the serverless runtime environment for this bot.
@@ -136,3 +137,15 @@ This script runs entirely within your authorized Google account. No data is sent
 ## 📄 License
 
 MIT License. Feel free to use and modify for your organization!
+
+```mermaid
+graph TD
+    A[ServiceNow] -- Generates Email Alert --> B(IT Shared Inbox / Gmail)
+    B -- Time-driven Trigger Every 1 Min --> C{Google Apps Script}
+    C -- Regex Parsing --> D[Extract: INC, User, Priority]
+    D -- Build JSON Payload --> E[Google Chat Webhook]
+    E -- Push Card Message --> F((Google Chat Space))
+
+    style A fill:#ebf5fb,stroke:#2e86c1
+    style C fill:#fef9e7,stroke:#f1c40f
+    style F fill:#eafaf1,stroke:#27ae60

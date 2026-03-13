@@ -51,7 +51,7 @@ While this project is configured for ServiceNow by default, the underlying **Ema
 * 📦 **HR & IT Provisioning:** Catch automated emails from HR systems (like Workday) about new employee onboardings and push a summary card to the IT hardware preparation team.
 
 
-How to Setup
+# How to Setup
 
   
 

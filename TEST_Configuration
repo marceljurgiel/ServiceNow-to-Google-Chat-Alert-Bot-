@@ -1,0 +1,27 @@
+# QUICK START / TEST SCRIPT
+
+ * How to test this script on your personal Gmail:
+
+ 1. Send an email to YOURSELF with the following:
+
+ - Subject: [New Incident] INC9876543 has been assigned to your queue
+
+ - Body:
+
+ * Ticket Alert
+
+ * Incident: INC9876543
+
+ * Affected User: Jan Kowalski
+
+ * Priority: P2 - High
+
+ * Short Description: Cannot login to ERP system after yesterday's update.
+
+ 2. Mark this email as UNREAD in your inbox.
+
+ 3. Paste your Google Chat Webhook URL below (webhookUrl).
+
+ 4. Paste your ServiceNow Instance URL below (instanceUrl).
+
+ 5. Click 'Run' in the Apps Script editor.

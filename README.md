@@ -15,6 +15,7 @@ IT Dispatchers and Support Teams often waste time manually refreshing ServiceNow
 
 This automation runs entirely in the cloud (Google Workspace). It parses incoming email notifications, extracts key incident data, and uses an Incoming Webhook to send a highly visible, interactive alert directly to the team's Google Chat space.
 
+```mermaid
 graph TD
     A[ServiceNow] -- Generates Email Alert --> B(IT Shared Inbox / Gmail)
     B -- Time-driven Trigger Every 1 Min --> C{Google Apps Script}

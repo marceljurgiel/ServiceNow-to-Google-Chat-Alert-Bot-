@@ -118,6 +118,25 @@ To make the script run fully automatically in the background without manual exec
 
 6. Save and grant the necessary permissions. The bot is now autonomous!
 
+## ⚠️ Troubleshooting & FAQ
+
+  
+
+**Q: The script runs but no message appears in Google Chat?**
+
+* **A:** Check the Apps Script "Execution Log". If it says `Found threads: 0`, your `searchQuery` is not matching any *unread* emails. Verify your Gmail search filters. If the execution is successful but no chat appears, verify that your Webhook URL is correct and active.
+
+  
+
+**Q: The Chat Card shows "N/A" or "Unknown" for some fields?**
+
+* **A:** This means the Regular Expressions (Regex) in the script didn't match the text in your email. ServiceNow email templates vary heavily between companies. You will need to adjust the `.match(/YOUR_REGEX/)` lines in the script to fit your specific email formatting.
+
+  
+
+**Q: Does it send duplicate alerts?**
+
+* **A:** No. The script automatically marks the processed emails as `Read` (`message.markRead()`). The search query only looks for `is:unread` messages, ensuring tickets are only pushed once.
 
 
 ## 🛡️ Security Note

@@ -15,6 +15,18 @@ IT Dispatchers and Support Teams often waste time manually refreshing ServiceNow
 
 This automation runs entirely in the cloud (Google Workspace). It parses incoming email notifications, extracts key incident data, and uses an Incoming Webhook to send a highly visible, interactive alert directly to the team's Google Chat space.
 
+```mermaid
+graph TD
+    A[ServiceNow] -- Generates Email Alert --> B(IT Shared Inbox / Gmail)
+    B -- Time-driven Trigger Every 1 Min --> C{Google Apps Script}
+    C -- Regex Parsing --> D[Extract: INC, User, Priority]
+    D -- Build JSON Payload --> E[Google Chat Webhook]
+    E -- Push Card Message --> F((Google Chat Space))
+
+    style A fill:#ebf5fb,stroke:#2e86c1
+    style C fill:#fef9e7,stroke:#f1c40f
+    style F fill:#eafaf1,stroke:#27ae60
+```
 
 
 ## 🛠️ Built With (Tools & Technologies)
@@ -138,17 +150,29 @@ This script runs entirely within your authorized Google account. No data is sent
 
 MIT License. Feel free to use and modify for your organization!
 
-```mermaid
-graph TD
-    A[ServiceNow] -- Generates Email Alert --> B(IT Shared Inbox / Gmail)
-    B -- Time-driven Trigger Every 1 Min --> C{Google Apps Script}
-    C -- Regex Parsing --> D[Extract: INC, User, Priority]
-    D -- Build JSON Payload --> E[Google Chat Webhook]
-    E -- Push Card Message --> F((Google Chat Space))
 
-    style A fill:#ebf5fb,stroke:#2e86c1
-    style C fill:#fef9e7,stroke:#f1c40f
-    style F fill:#eafaf1,stroke:#27ae60
+# 🧠 Future Roadmap: AI-Powered Analysis (Gemini Integration)
+The next evolution of this project involves integrating Gemini AI to transform raw incident data into actionable intelligence. By connecting the script to the Google Gemini API (Vertex AI), the bot can perform deep analysis before the dispatcher even opens the ticket.
+
+Key AI Capabilities:
+Smart Summarization: Automatically condense long, messy email chains or logs into a 2-sentence summary.
+
+Gemini Gems Integration: Use specialized AI personas trained on your team's application documentation to provide instant troubleshooting steps.
+
+Intelligent Routing (Triage): The AI can analyze the incident description and determine if it should stay with the General Support team or be escalated immediately to the App Dev/Backend team.
+
+Sentiment & Urgency Check: Detect if a user is frustrated or if the system impact is broader than reported, automatically adjusting internal visibility.
+
+```mermaid
+graph LR
+    A[ServiceNow Alert] --> B[Google Apps Script]
+    B --> C{Gemini AI API}
+    C -- Reference Docs --> D[Context: App Wiki/SOP]
+    C -- Analysis --> E[Summary + Advice]
+    E --> F[Interactive Google Chat Card]
+    
+    style C fill:#f3e5f5,stroke:#9c27b0
+    style D fill:#f3e5f5,stroke:#9c27b0
 ```
 
 
